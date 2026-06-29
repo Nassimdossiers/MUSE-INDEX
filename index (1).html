@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RACHJUMPER // MUSE ARCHIVE</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;600&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ========================================= -->
+<!-- BOOT SCREEN -->
+<!-- ========================================= -->
+
+<div id="bootScreen">
+
+<div class="bootContent">
+
+<h1>RACHJUMPER</h1>
+
+<p id="bootText">Initializing...</p>
+
+<div class="LoadingBar">
+
+<div id="LoadingFill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- BACKGROUND -->
+<!-- ========================================= -->
+
+<div id="backgroundGlow"></div>
+
+<div id="particles"></div>
+
+<!-- ========================================= -->
+<!-- MUSIC -->
+<!-- ========================================= -->
+
+<button id="musicButton">
+
+♫
+
+</button>
+
+<audio id="music" loop>
+
+<source src="music/theme.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- ========================================= -->
+<!-- APP -->
+<!-- ========================================= -->
+
+<div id="app">
+
+<!-- ===================== -->
+<!-- SIDEBAR -->
+<!-- ===================== -->
+
+<header class="archiveHeader">
+
+
+<div class="logo">
+
+    <div class="logoTag">
+        SYSTEM // INITIALIZED
+    </div>
+
+
+    <h1>
+        RACHJUMPER
+    </h1>
+
+
+    <p>
+        MUSE ARCHIVE
+    </p>
+
+
+    <div class="logoInfo">
+
+        <span>
+            ◈ PRIVATE DATABASE
+        </span>
+
+        <span>
+            ◈ VISITOR ACCESS
+        </span>
+
+        <span>
+            ◈ ONLINE
+        </span>
+
+    </div>
+
+
+</div>
+
+
+</header>
+
+<aside id="sidebar">
+
+<button class="navButton active" data-page="database">
+
+DATABASE
+
+</button>
+
+<button class="navButton" data-page="favorites">
+
+FAVORITES
+
+</button>
+
+<button class="navButton" data-page="random">
+
+RANDOM
+
+</button>
+
+<button class="navButton" data-page="about">
+
+ABOUT
+
+</button>
+
+</nav>
+
+<div class="sidebarStats">
+
+    <div class="statBox">
+
+        <div class="statIcon">
+            ◈
+        </div>
+
+        <div>
+            <h3>SUBJECT FILES</h3>
+            <p id="totalCount">0</p>
+        </div>
+
+    </div>
+
+
+    <div class="statBox">
+
+        <div class="statIcon">
+            ♥
+        </div>
+
+        <div>
+            <h3>SAVED FILES</h3>
+            <p id="favoriteCount">0</p>
+        </div>
+
+    </div>
+
+
+    <div class="statBox">
+
+        <div class="statIcon statusIcon">
+            ●
+        </div>
+
+        <div>
+            <h3>SYSTEM STATUS</h3>
+            <p class="online">
+                ONLINE
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</aside>
+
+<!-- ===================== -->
+<!-- MAIN -->
+<!-- ===================== -->
+
+<main>
+
+<header class="databaseheader">
+
+<div>
+
+<h1>MUSE DATABASE</h1>
+
+<p>ARCHIEVE OF MUSES, CHARACTERS AND STORIES</p>
+
+</div>
+
+</header>
+
+<section id="controls">
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search name, species or tags..."
+
+autocomplete="off"
+
+>
+
+<div id="suggestions"></div>
+
+<div id="filters">
+
+    <div class="filterHeader">
+        ARCHIVE SECTORS
+
+        <span>
+            SELECT CATEGORY
+        </span>
+    </div>
+
+
+    <div class="filterGrid">
+
+
+        <button class="filter active" data-filter="all">
+
+            <div class="symbol">◈</div>
+
+            <div>
+                ALL CHARACTERS
+                <small>DATABASE</small>
+            </div>
+
+        </button>
+
+
+
+        <button class="filter" data-filter="human">
+
+            <div class="symbol">◈</div>
+
+            <div>
+                HUMANS
+                <small>SPECIES</small>
+            </div>
+
+        </button>
+
+
+
+        <button class="filter" data-filter="furry">
+
+            <div class="symbol">◈</div>
+
+            <div>
+                FURRIES
+                <small>SPECIES</small>
+            </div>
+
+        </button>
+
+
+
+        <button class="filter" data-filter="original">
+
+            <div class="symbol">◈</div>
+
+            <div>
+                ORIGINAL CHARACTER
+                <small>ORIGIN</small>
+            </div>
+
+        </button>
+
+
+
+        <button class="filter" data-filter="licensed">
+
+            <div class="symbol">◈</div>
+
+            <div>
+                LICENSED CHARACTERS
+                <small>ORIGIN</small>
+            </div>
+
+        </button>
+
+
+    </div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+</section>
+
+</main>
+
+</div>
+
+<!-- ========================================= -->
+<!-- DOSSIER -->
+<!-- ========================================= -->
+
+<div id="dossierOverlay" class="hidden">
+
+<div id="dossier">
+
+<button id="closeDossier">
+
+✕
+
+</button>
+
+<div id="dossierContent">
+
+<!-- generated by JS -->
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- ABOUT PAGE -->
+<!-- ========================================= -->
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+<div id="aboutOverlay" class="overlay hidden">
+
+    <div class="aboutWindow">
+
+        <button id="closeAbout" class="closeButton">
+            ✕
+        </button>
+
+        <div class="aboutLeft">
+
+            <img
+                src="Images/PROFILEPICTURE.png"
+                alt="Profile">
+
+        </div>
+
+        <div class="aboutRight">
+
+            <h1>RACHJUMPER</h1>
+
+            <p class="aboutRole">
+                Writer • Roleplayer • FLASH game modder
+            </p>
+
+<p>
+
+Name: Troy<br>
+Online ID: Rachjumper<br>
+Age: 19<br>
+Nationality: Poland 🇵🇱<br>
+Time zone: GMT +1<br>
+Relationship: Taken (Shayne 17.06.2026)<br>
+Interest: Humans + Furries<br>
+Roleplay time: Around 3 years
+
+            </p>
+
+            <h3>Currently Working On</h3>
+
+            <ul>
+
+                <li>RAZE 2: Containment Breach [MOD]</li>
+
+                <li>RAZE 2 inspired book</li>
+
+                <li>Granturismo 7 platinum trophy</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- RANDOM CHARACTER -->
+<!-- ========================================= -->
+
+<div id="randomOverlay" class="randomoverlay hidden">
+
+    <div class="randomWindow">
+
+        <button id="closeRandom" class="closeButton">
+            ✕
+        </button>
+
+
+        <img id="randomImage">
+
+
+        <div class="randomInfo">
+
+            <h1 id="randomName">
+                UNKNOWN
+            </h1>
+
+
+            <p id="randomSpecies">
+                
+            </p>
+
+
+            <p id="randomDescription">
+
+            </p>
+
+
+            <div class="randomButtons">
+
+                <button id="openRandom">
+                    OPEN FILE
+                </button>
+
+
+                <button id="rerollRandom">
+                    GENERATE AGAIN
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
